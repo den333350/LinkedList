@@ -43,6 +43,23 @@ public class LinkedList<E> implements Iterable<E> {
         };
     }
 
+    public Iterator<E> reversereIterator(){
+        return new Iterator<>() {
+            Node<E> current = tail;
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                E value = current.value;
+                current= current.previous;
+                return value;
+            }
+        };
+    }
+
     public boolean add(E e) {
         Node<E> l = tail;
         Node<E> node= new Node<>(l,e,null);
