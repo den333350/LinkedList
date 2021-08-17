@@ -43,7 +43,7 @@ public class LinkedList<E> implements Iterable<E> {
         };
     }
 
-    public Iterator<E> reversereIterator(){
+    public Iterator<E> reverseIterator(){
         return new Iterator<>() {
             Node<E> current = tail;
             @Override
